@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://csnkym6v55ed2"]
+
+[ext_resource type="Texture2D" uid="uid://47i2betl18du" path="res://textures/flowers/flower2.png" id="1_ecwy3"]
+
+[node name="Flowers" type="Node3D" unique_id=307679703]
+
+[node name="Sprite3D" type="Sprite3D" parent="." unique_id=1710732746]
+billboard = 2
+texture_filter = 0
+texture = ExtResource("1_ecwy3")

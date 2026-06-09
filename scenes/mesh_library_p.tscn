@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://d17kdvmlse1ad"]
+
+[ext_resource type="Texture2D" uid="uid://cimcs3dm7cwae" path="res://textures/grass.png" id="1_785jv"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xv16b"]
+albedo_texture = ExtResource("1_785jv")
+uv1_scale = Vector3(3, 2, 1)
+texture_filter = 0
+
+[sub_resource type="BoxMesh" id="BoxMesh_w2ace"]
+material = SubResource("StandardMaterial3D_xv16b")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_f33by"]
+
+[node name="MeshLibrary-P" type="Node3D" unique_id=807249073]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=867331833]
+mesh = SubResource("BoxMesh_w2ace")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D" unique_id=1509055470]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D/StaticBody3D" unique_id=863981387]
+shape = SubResource("BoxShape3D_f33by")

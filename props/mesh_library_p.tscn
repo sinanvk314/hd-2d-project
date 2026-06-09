@@ -1,0 +1,51 @@
+[gd_scene format=3 uid="uid://doyv02ppnnwc"]
+
+[ext_resource type="Texture2D" uid="uid://cimcs3dm7cwae" path="res://textures/grass.png" id="1_p0yvh"]
+[ext_resource type="Texture2D" uid="uid://47i2betl18du" path="res://textures/flowers/flower2.png" id="2_v15qg"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xv16b"]
+albedo_texture = ExtResource("1_p0yvh")
+uv1_scale = Vector3(3, 2, 1)
+texture_filter = 0
+
+[sub_resource type="BoxMesh" id="BoxMesh_w2ace"]
+material = SubResource("StandardMaterial3D_xv16b")
+size = Vector3(0.08, 0.08, 0.08)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_f33by"]
+size = Vector3(0.08, 0.08, 0.08)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_p0yvh"]
+load_path = "res://.godot/imported/grass.png-c637977c146fec1b1e97e5c999cb4594.s3tc.ctex"
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_v15qg"]
+albedo_texture = SubResource("CompressedTexture2D_p0yvh")
+uv1_scale = Vector3(3, 2, 1)
+texture_filter = 0
+
+[sub_resource type="BoxMesh" id="BoxMesh_8la2m"]
+material = SubResource("StandardMaterial3D_v15qg")
+size = Vector3(0.08, 0.08, 0.08)
+
+[node name="MeshLibrary-P" type="Node3D" unique_id=807249073]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=867331833]
+mesh = SubResource("BoxMesh_w2ace")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D" unique_id=1509055470]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D/StaticBody3D" unique_id=863981387]
+shape = SubResource("BoxShape3D_f33by")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="." unique_id=1996384101]
+mesh = SubResource("BoxMesh_8la2m")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D2" unique_id=444921240]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D2/StaticBody3D" unique_id=370474751]
+shape = SubResource("BoxShape3D_f33by")
+
+[node name="Sprite3D" type="Sprite3D" parent="." unique_id=1965429880]
+billboard = 2
+texture_filter = 0
+texture = ExtResource("2_v15qg")
