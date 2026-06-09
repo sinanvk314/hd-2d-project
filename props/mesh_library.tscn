@@ -1,0 +1,111 @@
+[gd_scene format=3 uid="uid://il51vkrsv08c"]
+
+[ext_resource type="Texture2D" uid="uid://ce8dgfk0lmn5w" path="res://textures/dirt1.png" id="1_t7hg2"]
+[ext_resource type="Texture2D" uid="uid://duhea5pv65lb5" path="res://textures/floor_ground_dirt.png" id="2_grqpl"]
+[ext_resource type="Texture2D" uid="uid://c0n6qtdyrf1v4" path="res://textures/floor_ground_sand.png" id="3_a24pj"]
+[ext_resource type="Texture2D" uid="uid://bywj1whuopnxw" path="res://textures/floor_stone.png" id="4_uhnvw"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_epnb5"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_r0cfh"]
+albedo_texture = SubResource("CompressedTexture2D_epnb5")
+uv1_scale = Vector3(3, 2, 1)
+texture_filter = 0
+
+[sub_resource type="BoxMesh" id="BoxMesh_g2w8g"]
+material = SubResource("StandardMaterial3D_r0cfh")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_n0t6w"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_7iqhw"]
+load_path = "res://.godot/imported/grass1.png-ad569fec1501bd8974c4e5a05d7f05ea.s3tc.ctex"
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_yve87"]
+albedo_texture = SubResource("CompressedTexture2D_7iqhw")
+uv1_scale = Vector3(3, 2, 1)
+texture_filter = 0
+
+[sub_resource type="BoxMesh" id="BoxMesh_jo043"]
+material = SubResource("StandardMaterial3D_yve87")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_npude"]
+albedo_texture = ExtResource("1_t7hg2")
+uv1_scale = Vector3(3, 2, 1)
+texture_filter = 0
+
+[sub_resource type="BoxMesh" id="BoxMesh_pcong"]
+material = SubResource("StandardMaterial3D_npude")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_dhy2j"]
+albedo_texture = ExtResource("2_grqpl")
+uv1_scale = Vector3(3, 2, 1)
+texture_filter = 0
+
+[sub_resource type="BoxMesh" id="BoxMesh_v3g4d"]
+material = SubResource("StandardMaterial3D_dhy2j")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hh2ck"]
+albedo_texture = ExtResource("3_a24pj")
+uv1_scale = Vector3(3, 2, 1)
+texture_filter = 0
+
+[sub_resource type="BoxMesh" id="BoxMesh_rsmwd"]
+material = SubResource("StandardMaterial3D_hh2ck")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_tm61b"]
+albedo_texture = ExtResource("4_uhnvw")
+uv1_scale = Vector3(3, 2, 1)
+texture_filter = 0
+
+[sub_resource type="BoxMesh" id="BoxMesh_8nd4g"]
+material = SubResource("StandardMaterial3D_tm61b")
+
+[node name="mesh library" type="Node3D" unique_id=1231342959]
+
+[node name="stone1" type="MeshInstance3D" parent="." unique_id=328559030]
+mesh = SubResource("BoxMesh_g2w8g")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="stone1" unique_id=644525358]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="stone1/StaticBody3D" unique_id=42400620]
+shape = SubResource("BoxShape3D_n0t6w")
+
+[node name="grass" type="MeshInstance3D" parent="." unique_id=1841656463]
+mesh = SubResource("BoxMesh_jo043")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="grass" unique_id=52684743]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="grass/StaticBody3D" unique_id=813651745]
+shape = SubResource("BoxShape3D_n0t6w")
+
+[node name="grass2" type="MeshInstance3D" parent="." unique_id=2051239167]
+mesh = SubResource("BoxMesh_pcong")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="grass2" unique_id=1817371779]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="grass2/StaticBody3D" unique_id=1513467978]
+shape = SubResource("BoxShape3D_n0t6w")
+
+[node name="dirt" type="MeshInstance3D" parent="." unique_id=1206702656]
+mesh = SubResource("BoxMesh_v3g4d")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="dirt" unique_id=1608687614]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="dirt/StaticBody3D" unique_id=2032692626]
+shape = SubResource("BoxShape3D_n0t6w")
+
+[node name="pathsand" type="MeshInstance3D" parent="." unique_id=633158912]
+mesh = SubResource("BoxMesh_rsmwd")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="pathsand" unique_id=1479029346]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="pathsand/StaticBody3D" unique_id=879414700]
+shape = SubResource("BoxShape3D_n0t6w")
+
+[node name="stonefloor" type="MeshInstance3D" parent="." unique_id=245566753]
+mesh = SubResource("BoxMesh_8nd4g")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="stonefloor" unique_id=858007527]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="stonefloor/StaticBody3D" unique_id=1519057841]
+shape = SubResource("BoxShape3D_n0t6w")

@@ -1,0 +1,38 @@
+[gd_scene format=3 uid="uid://ckuemsqkhkptm"]
+
+[ext_resource type="Texture2D" uid="uid://ci3uopng8jera" path="res://characters/charsprite_n.png" id="1_dj0lg"]
+[ext_resource type="Texture2D" uid="uid://binymecdmeyur" path="res://characters/charsprite.png" id="2_ouabm"]
+[ext_resource type="Script" uid="uid://bmoid3kofu6ll" path="res://characters/char1.gd" id="3_tpeve"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_dj0lg"]
+transparency = 2
+alpha_scissor_threshold = 0.1
+alpha_antialiasing_mode = 0
+cull_mode = 2
+albedo_texture = ExtResource("2_ouabm")
+normal_enabled = true
+normal_texture = ExtResource("1_dj0lg")
+texture_filter = 0
+billboard_mode = 2
+
+[sub_resource type="QuadMesh" id="QuadMesh_ouabm"]
+material = SubResource("StandardMaterial3D_dj0lg")
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_qxri4"]
+radius = 0.125
+height = 0.5
+
+[node name="CharacterBody3D" type="CharacterBody3D" unique_id=972638504]
+script = ExtResource("3_tpeve")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=306756455]
+layers = 3
+mesh = SubResource("QuadMesh_ouabm")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=145313167]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+shape = SubResource("CapsuleShape3D_qxri4")
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=461953545]
+transform = Transform3D(1, 0, 0, 0, 0.9659259, 0.25881907, 0, -0.25881907, 0.9659258, 0, 4.0355864, 9.8647375)
+fov = 35.0
